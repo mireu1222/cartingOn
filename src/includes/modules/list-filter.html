@@ -1,0 +1,13 @@
+<form action="">
+    <div class="list-filter">
+        @@if(context.spot){
+            <div class="spot-select">
+                <button type="button">지역을 선택해주세요</button>
+            </div>
+        }
+        <div class="search">
+            <input type="text" class="form-control" @@if(context.placeholder){placeholder="@@placeholder"}@@if(!context.placeholder){placeholder="검색어를 입력하세요"} title="검색어 입력">
+            <button type="button" class="btn-search"><span class="blind">검색</span></button>
+        </div>
+    </div>
+</form>

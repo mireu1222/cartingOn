@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            cate02 : true,
+        })
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-title.html', {
+                cate02 : '01'
+            })
+            <div class="contents-area">
+                <div class="partners-map-wrap">
+                    <!-- search, list -->
+                    <div class="list-wrap">
+                        @@include('./modules/list-filter.html', {
+                            spot : true
+                        })
+                        @@include('./modules/spot-list.html', {
+                            list : '3'
+                        })
+                        @@include('./modules/pagination.html')
+                    </div>
+                    <!-- // search, list -->
+                    <!-- map -->
+                    <div class="map-area">
+                        <!-- 지도 API가 들어감 -->
+
+                        <!-- 지점 loop -->
+                        <div class="spots" style="top:100px; left:100px;">
+                            <span>1</span>
+                            <!-- hover contents -->
+                            <div class="hover-spot-info">
+                                <div class="spot-lists">
+                                    <div class="inner">
+                                        <span class="thumb">
+                                            <img src="/images/@noimg2.gif" alt="">
+                                        </span>
+                                        <div class="info-cont">
+                                            <div class="head">
+                                                <p class="name"><span class="blind">시공점 이름</span>루마썬팅 영등포점</p>
+                                                <p class="distance"><span class="blind">지금 위치로부터</span>약 25.4km</p>
+                                            </div>
+                                            <div class="review">
+                                                <p class="score"><span class="blind">평점</span>4.9</p>
+                                                <p class="count"><span class="blind">리뷰수</span>10개</p>
+                                            </div>
+                                            <p class="address"><span class="blind">주소</span>충청남도 천안시 서북구 불당1길 8</p>
+                                            <div class="work-time-info">
+                                                <span class="blind">영업시간</span>
+                                                <ul>
+                                                    <li>
+                                                        <p>평일</p>
+                                                        <p>오전 07:00 ~ 오후 09:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>토요일</p>
+                                                        <p>오전 08:00 ~ 오후 03:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>일요일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>공휴일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="hashs">
+                                                <span>세로재단</span>
+                                                <span>후면통재단</span>
+                                                <span>쉐이빙</span>
+                                                <span>에어워터샤워</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // hover contents -->
+                        </div>
+                        <!-- // 지점 loop -->
+
+                        <!-- 지점 loop -->
+                        <div class="spots" style="top:200px; left:200px;">
+                            <span>2</span>
+                            <!-- hover contents -->
+                            <div class="hover-spot-info">
+                                <div class="spot-lists">
+                                    <div class="inner">
+                                        <span class="thumb">
+                                            <img src="/images/@noimg2.gif" alt="">
+                                        </span>
+                                        <div class="info-cont">
+                                            <div class="head">
+                                                <p class="name"><span class="blind">시공점 이름</span>루마썬팅 영등포점</p>
+                                                <p class="distance"><span class="blind">지금 위치로부터</span>약 25.4km</p>
+                                            </div>
+                                            <div class="review">
+                                                <p class="score"><span class="blind">평점</span>4.9</p>
+                                                <p class="count"><span class="blind">리뷰수</span>10개</p>
+                                            </div>
+                                            <p class="address"><span class="blind">주소</span>충청남도 천안시 서북구 불당1길 8</p>
+                                            <div class="work-time-info">
+                                                <span class="blind">영업시간</span>
+                                                <ul>
+                                                    <li>
+                                                        <p>평일</p>
+                                                        <p>오전 07:00 ~ 오후 09:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>토요일</p>
+                                                        <p>오전 08:00 ~ 오후 03:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>일요일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>공휴일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="hashs">
+                                                <span>세로재단</span>
+                                                <span>후면통재단</span>
+                                                <span>쉐이빙</span>
+                                                <span>에어워터샤워</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // hover contents -->
+                        </div>
+                        <!-- // 지점 loop -->
+
+                        <!-- 지점 loop -->
+                        <div class="spots" style="top:500px; left:150px;">
+                            <span>3</span>
+                            <!-- hover contents -->
+                            <div class="hover-spot-info">
+                                <div class="spot-lists">
+                                    <div class="inner">
+                                        <span class="thumb">
+                                            <img src="/images/@noimg2.gif" alt="">
+                                        </span>
+                                        <div class="info-cont">
+                                            <div class="head">
+                                                <p class="name"><span class="blind">시공점 이름</span>루마썬팅 영등포점</p>
+                                                <p class="distance"><span class="blind">지금 위치로부터</span>약 25.4km</p>
+                                            </div>
+                                            <div class="review">
+                                                <p class="score"><span class="blind">평점</span>4.9</p>
+                                                <p class="count"><span class="blind">리뷰수</span>10개</p>
+                                            </div>
+                                            <p class="address"><span class="blind">주소</span>충청남도 천안시 서북구 불당1길 8</p>
+                                            <div class="work-time-info">
+                                                <span class="blind">영업시간</span>
+                                                <ul>
+                                                    <li>
+                                                        <p>평일</p>
+                                                        <p>오전 07:00 ~ 오후 09:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>토요일</p>
+                                                        <p>오전 08:00 ~ 오후 03:00</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>일요일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                    <li>
+                                                        <p>공휴일</p>
+                                                        <p>휴무</p>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <div class="hashs">
+                                                <span>세로재단</span>
+                                                <span>후면통재단</span>
+                                                <span>쉐이빙</span>
+                                                <span>에어워터샤워</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // hover contents -->
+                        </div>
+                        <!-- // 지점 loop -->
+                    </div>
+                    <!-- // map -->
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

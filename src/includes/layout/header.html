@@ -1,0 +1,30 @@
+<header>
+    <div class="head-cont">
+        <h1><a href="/"><img src="/images/logo.png" alt="카팅 로고" title="메인으로 이동"></a></h1>
+        <button type="button" class="btn-menu-all"><span class="blind">전체메뉴보기</span><span class="bar" aria-hidden="true"></span></button>
+        @@if(!context.mypage){
+            <nav>
+                <ul id="gnb">
+                    <li><a href="/page/sub_01.html"@@if(context.cate01){ class="active"}>카팅스토리</a></li>
+                    <li><a href="/page/sub_02.html"@@if(context.cate02){ class="active"}>시공점 찾기</a></li>
+                    <li><a href="/page/sub_03_01.html"@@if(context.cate03){ class="active"}>이용안내</a></li>
+                    <li><a href="/page/sub_04_01.html"@@if(context.cate04){ class="active"}>고객센터</a></li>
+                </ul>
+                <ul class="btns">
+                    <li><a href="/page/login.html" class="link-basic">로그인</a></li>
+                    <li><a href="" class="link-basic">파트너스 가입</a></li>
+                </ul>
+                <a href="" class="btn btn-md btn-point"><span>견적요청</span></a>
+            </nav>
+        }
+        @@if(context.mypage){
+            <nav>
+                <ul id="gnb">
+                    <li><a href="">받은견적</a></li>
+                    <li><a href="">받은요청<span class="count">15</span></a></li>
+                    <li><a href="/page/sub_02.html">시공점 찾기</a></li>
+                </ul>
+            </nav>
+        }
+    </div>
+</header>

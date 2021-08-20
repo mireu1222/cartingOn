@@ -1,0 +1,24 @@
+<ul class="review-lists">
+    @@for(var i=0; i < list; i++){
+        <li>
+            <div class="inner">
+                <div class="writer">
+                    <span class="thumb" aria-hidden="true"><img src="/images/@noimg3.gif" alt=""></span>
+                    <p>작성자닉네임</p>
+                </div>
+                <div class="score">
+                    <div class="star-rating pt`+[i+1]+`" aria-hidden="true">
+                        <span class="on"></span>
+                    </div>
+                    <p><span class="blind">고객 만족도 5점 만점 중</span>(`+[i+1]+`)</p>
+                </div>
+                <p class="option">시공 상품 : [뉴쏘렌토 R-버텍스 광명점]전면 VERTEX</p>
+                <p class="cont">
+                    <span class="blind">고객리뷰 내용</span>
+                    마지막까지 시공 잘 도와줘서 좋았어요 마지막까지 시공 잘 도와줘서 좋았어요
+                </p>
+                <p class="date"><span class="blind">작성일</span>2021.00.00</p>
+            </div>
+        </li>
+    }
+</ul>

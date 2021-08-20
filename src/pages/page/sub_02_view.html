@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            cate02 : true,
+        })
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-title.html', {
+                cate02 : '01'
+            })
+            <div class="contents-area">
+                <div class="partners-view">
+                    <section class="head">
+                        <div class="shop-imgs">
+                            <div class="view">
+                            </div>
+                            <ul class="lists">
+                                <li class="on"><img src="/images/img/img-shop1.jpg" alt=""></li>
+                                <li><img src="/images/img/img-review.jpg" alt=""></li>
+                                <li><img src="/images/img/img-shop1.jpg" alt=""></li>
+                                <li><img src="/images/img/img-shop1.jpg" alt=""></li>
+                                <li><img src="/images/img/img-shop1.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                        <div class="shop-info">
+                            <p class="name">시공점 이름</p>
+                            <div class="review">
+                                <p class="score"><span class="blind">평점</span>4.9</p>
+                                <p class="count"><span class="blind">리뷰수</span>10개</p>
+                            </div>
+                            <p class="address"><span class="blind">주소</span>경기도 광명시 신촌로 15번길 27(소하동)</p>
+                            <ul class="point-list">
+                                <li class="pt1">전자보증서</li>
+                                <li class="pt2">신규 시공점</li>
+                            </ul>
+                            <div class="work-time-info">
+                                <p class="tit">운영시간</p>
+                                <ul>
+                                    <li><p>평일</p><p>오전 07:00 ~ 오후 09:00</p></li>
+                                    <li><p>토요일</p><p>오전 08:00 ~ 오후 03:00</p></li>
+                                    <li><p>일요일</p><p>휴무</p></li>
+                                    <li><p>공휴일</p><p>휴무</p></li>
+                                </ul>
+                            </div>
+                            <div class="hashs">
+                                <span>세로재단</span>
+                                <span>후면통재단</span>
+                                <span>쉐이빙</span>
+                                <span>에어워터샤워</span>
+                                <span>세로재단</span>
+                                <span>후면통재단</span>
+                                <span>쉐이빙</span>
+                                <span>에어워터샤워</span>
+                            </div>
+                            <a href="" class="btn btn-lg btn-point"><span>견적문의</span></a>
+                        </div>
+                    </section>
+                    <section>
+                        <h3 class="h3-title">시공점 위치 정보</h3>
+                        <div class="map-area">
+                            <!-- 지도 api가 들어감 --> 
+                        </div>
+                        <p class="ment">
+                            안녕하세여. 아우토스터 프리미언 루마 버텍스 광명점입니다. 저희는 루마썬팅코리아얼마전에 루마썬팅(루마코리아)이 자동차 애프터마켓 플랫폼 회사 라이더대시 코리아가 운영하는 '카라모라'와 전략적 파트너십을 지난 12일 체결했다.<br>
+                            이번 업무협약 체결로 '루마썬팅'은 온라인을 통한 판매와 관리 시스템 역량을 강화하고, ‘카라모라’는 국내 최초 온라인 썬팅 판매 서비스를 시도하는 과정에서 루마썬팅의 전국 오프라인 판매망을 확보하게 됐다.<br>
+                            김승양 루마코리아 영업본부장은 “썬팅필름 재고관리, 디지털 보증, 인공지능 기반 견적 산출 등 디지털 혁신을 통해 기업체질을 전면 개선하여 고객 서비스 강화에 적극 나설 방침”이라고 말했다.<br>
+                            안성호 라이더대시 대표는 “인공지능과 빅데이터를 활용한 세일즈 자동화 플랫폼을 개발하고, AI기반 챗봇 상담과 직접 상담을 통해 고객 접점 서비스를 확대하고, 정보 비대칭으로 인한 불공정 거래를 해결하겠다”고 밝혔다.
+                        </p>
+                    </section>
+                    <section>
+                        <h3 class="h3-title">최근 시공 갤러리</h3>
+                        <a href="" class="btn-all">전체보기</a>
+                        <ul class="work-view-list">
+                            <li>
+                                <a href="" class="inner">
+                                    <span class="thumb"><img src="/images/img/img-review.jpg" alt=""></span>
+                                    <p class="title">기아쏘렌토</p>
+                                    <p class="desc">[뉴쏘렌토 R-버텍스 광명점]전면 VERTEX</p>
+                                    <div class="hashs">
+                                        <span>세로재단</span>
+                                        <span>후면통재단</span>
+                                        <span>쉐이빙</span>
+                                        <span>에어워터샤워</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inner">
+                                    <span class="thumb"><img src="/images/img/img-review.jpg" alt=""></span>
+                                    <p class="title">기아쏘렌토</p>
+                                    <p class="desc">[뉴쏘렌토 R-버텍스 광명점]전면 VERTEX</p>
+                                    <div class="hashs">
+                                        <span>세로재단</span>
+                                        <span>후면통재단</span>
+                                        <span>쉐이빙</span>
+                                        <span>에어워터샤워</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inner">
+                                    <span class="thumb"><img src="/images/img/img-review.jpg" alt=""></span>
+                                    <p class="title">기아쏘렌토</p>
+                                    <p class="desc">[뉴쏘렌토 R-버텍스 광명점]전면 VERTEX</p>
+                                    <div class="hashs">
+                                        <span>세로재단</span>
+                                        <span>후면통재단</span>
+                                        <span>쉐이빙</span>
+                                        <span>에어워터샤워</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="" class="inner">
+                                    <span class="thumb"><img src="/images/img/img-review.jpg" alt=""></span>
+                                    <p class="title">기아쏘렌토</p>
+                                    <p class="desc">[뉴쏘렌토 R-버텍스 광명점]전면 VERTEX</p>
+                                    <div class="hashs">
+                                        <span>세로재단</span>
+                                        <span>후면통재단</span>
+                                        <span>쉐이빙</span>
+                                        <span>에어워터샤워</span>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </section>
+                    <section>
+                        <h4 class="h4-title">
+                            <p class="score"><span class="blind">평점</span>5.0</p>
+                            <p class="tit">고객리뷰<em>5</em><span class="blind">건</span></p>
+                        </h4>
+                        @@include('./modules/review-list.html', {
+                            list : '5'
+                        })
+                    </section>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+    <script>
+        $(function(){
+            $('.shop-imgs ul.lists li').click(function(){
+                var img = $(this).find('img').attr('src');
+
+                $(this).siblings('li').removeClass('on');
+                $(this).addClass('on');
+                $('.shop-imgs .view').html('<img src="'+img+'" alt="">');
+            });
+
+            $('.shop-imgs ul.lists li:first-child').click();
+        });
+    </script>
+</body>
+</html>
