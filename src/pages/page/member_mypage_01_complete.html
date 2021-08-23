@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            mypage : true
+        })
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-title.html', {
+                mypage : '01'
+            })
+            <div class="contents-area">
+                <div class="complete-wrap">
+                    <h3 class="tit">요청서가 마감되었습니다.</h3>
+                    <p class="desc">자동차 썬팅 요청서는 관리자에 의해<br>2021년 00월 00일에 마감되었습니다.</p>
+                    <p class="desc">요청을 재발송하시면 더 많은 고수님들의 견적을 받아보실 수 있습니다.</p>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-lg btn-point" data-toggle="modal" data-target="#modal-myorder"><span>내 요청서 보기</span></button>
+                        <button type="button" class="btn btn-lg btn-gray" data-toggle="modal" data-target="#modal-cancel"><span>요청 취소하기</span></button>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-gray" data-toggle="modal" data-target="#modal-error"><span>error alert popup 확인용 버튼. 개발시 삭제</span></button>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html', {
+            id : 'modal-myorder',
+            title : '내 요청서',
+        })
+        @@include('./layout/modal.html', {
+            id : 'modal-cancel',
+            title : '요청 취소하기',
+            button : '요청 취소하기',
+            disabled : true
+        })
+        @@include('./layout/modal.html', {
+            id : 'modal-error',
+            button : '확인',
+            close : true
+        })
+        <!-- // modal -->
+    </div>
+</body>
+</html>

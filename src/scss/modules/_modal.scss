@@ -8,24 +8,18 @@
     bottom:0;
     width:100%;
     height:100%;
-    padding:0 20px;
+    padding:0 16px;
     background:rgba(#000, 0.5);
     overflow:hidden;
     z-index:1000;
     outline:0;
-    &.small {
-        .modal-wrap {
-            max-width:400px;
-        }
-    }
     .modal-wrap {
         display:flex;
         align-items:center;
         width:100%;
-        max-width:550px;
-        height:calc(100% - 60px);
-        margin:30px auto;
-        overflow-y:auto;
+        max-width:445px;
+        height:calc(100% - 100px);
+        margin:50px auto;
         .modal-container {
             position:relative;
             display:flex;
@@ -33,222 +27,139 @@
             width:100%;
             max-height:100%;
             background:#fff;
-            border:1px solid #999;
-            border-radius:15px;
+            border:1px solid #ddd;
+            border-radius:4px;
             z-index:1010;
-            .btn-close {
-                position:absolute;
-                top:0;
-                right:0;
-                width:50px;
-                height:50px;
-                &::before,
-                &::after {
-                    content:' ';
+            overflow:hidden;
+            .modal-head {
+                position:relative;
+                min-height:30px;
+                h1 {
+                    padding:0 20px;
+                    background:$disabled;
+                    font-size:20px;
+                    line-height:60px;
+                    font-weight:500;
+                    @include mobile {
+                        padding:0 16px;
+                        font-size:18px;
+                        line-height:50px;
+                    }
+                }
+                .btn-close {
                     position:absolute;
-                    left:12px;
-                    bottom:0;
-                    width:2px;
-                    height:26px;
-                    background:#666;
-                }
-                &::before {
-                    transform:rotate(45deg);
-                }
-                &::after {
-                    transform:rotate(-45deg);
-                }
-            }
-            .btn-group {
-                margin-top:30px;
-                > * {
-                    flex:1;
+                    top:0;
+                    right:0;
+                    width:60px;
+                    height:60px;
+                    @include mobile {
+                        widtH:50px;
+                        height:50px;
+                    }
+                    &::before,
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        left:50%;
+                        top:50%;
+                        width:2px;
+                        height:26px;
+                        border-radius:1px;
+                        margin-top:-13px;
+                        margin-left:-1px;
+                        background:#666;
+                        @include mobile {
+                            height:20px;
+                            margin-top:-10px;
+                        }
+                    }
+                    &::before {
+                        transform:rotate(45deg);
+                    }
+                    &::after {
+                        transform:rotate(-45deg);
+                    }
                 }
             }
             .modal-body {
-                max-height:100%;
-                padding:40px;
+                padding:30px 20px;
                 overflow-y:auto;
                 @include mobile {
-                    padding:30px 16px;
+                    padding:20px 16px;
                 }
-                h1.tit {
-                    margin-bottom:20px;
-                    @include font-xl;
-                    font-weight:500;
-                }
-                .logins {
-                    .login-forms {
-                        > li {
-                            margin-top:10px;
-                            &:first-child {
-                                margin-top:0;
-                            }
-                            .form-control {
-                                height:60px;
-                                @include mobile {
-                                    height:50px;
-                                }
-                            }
-                        }
-                    }
-                    .btn-login {
-                        display:block;
-                        width:100%;
-                        margin-top:10px;
-                    }
-                    .login-bottom {
-                        display:flex;
-                        align-items:center;
-                        margin-top:20px;
-                        .chk-wrap {
-                            margin-right:auto;
-                        }
-                        .find-btn {
-                            display:block;
-                            margin-left:15px;
-                            @include font;
-                            line-height:1;
-                        }
-                    }
-                    .sns-logins {
-                        margin-top:50px;
-                        .tit {
-                            @include font-md;
-                            text-align:center;
-                        }
-                        .btns {
-                            margin-top:20px;
-                            text-align:center;
-                            font-size:0;
-                            li {
-                                display:inline-block;
-                                vertical-align:top;
-                                margin:0 20px;
-                                .btn-sns {
-                                    display:block;
-                                    width:60px;
-                                    height:60px;
-                                    border:1px solid $border;
-                                    border-radius:50%;
-                                    &.sns01 {
-                                        background:url('/images/icon/icon-naver-gr.png') center no-repeat;
-                                    }
-                                    &.sns02 {
-                                        background:url('/images/icon/icon-kakao.png') center no-repeat;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .joins {
-                        margin-top:30px;
-                        padding-top:25px;
-                        border-top:1px solid $border;
-                        .tit {
-                            text-align:center;
-                            @include font-md;
-                        }
-                        .btn {
-                            display:block;
-                            width:100%;
-                            margin-top:20px;
-                        }
+                .modal-tit {
+                    margin-bottom:30px;
+                    @include font-md;
+                    @include mobile {
+                        margin-bottom:20px;
                     }
                 }
-                .review {
-                    section {
-                        margin-top:30px;
-                        padding-top:30px;
-                        border-top:1px solid $border;
+                .order-cont-lists {
+                    > li {
+                        margin-top:40px;
                         @include mobile {
                             margin-top:20px;
-                            padding-top:20px;
                         }
-                    }
-                    h2.tit {
-                        margin-bottom:10px;
-                        text-align:center;
-                        @include font-lg;
-                        font-weight:500;
-                        @include mobile {
+                        &:first-child {
+                            margin-top:0;
+                        }
+                        .tit {
                             margin-bottom:5px;
+                            color:#666;
+                            @include font;
                         }
-                    }
-                    .inputfile-wrap {
-                        margin-top:10px;
-                    }
-                    .alert {
-                        margin-top:5px;
-                        font-size:12px;
-                        line-height:16px;
-                        color:$red;
-                        text-align:center;
-                    }
-                }
-                .order-alert {
-                    section {
-                        border-bottom:1px solid $border;
-                        padding:25px 0;
-                        h2.tit {
-                            font-size:20px;
+                        .desc {
+                            @include font-md;
                             font-weight:500;
                         }
-                        .bullet-list {
-                            margin-top:10px;
+                    }
+                }
+                .error {
+                    text-align:center;
+                    .tit {
+                        font-size:30px;
+                        font-weight:500;
+                        @include mobile {
+                            font-size:24px;
                         }
-                        .box {
-                            margin-top:20px;
-                            background:$disabled;
-                            padding:20px;
-                            p {
+                        &::before {
+                            content:' ';
+                            display:block;
+                            width:150px;
+                            height:150px;
+                            margin:0 auto 20px;
+                            background:url('/images/icon/icon-error.jpg') center no-repeat;
+                            background-size:100%;
+                            @include mobile {
+                                width:75px;
+                                height:75px;
                                 margin-bottom:15px;
                             }
-                            .chk-wrap {
-                                margin-top:5px;
-                            }
                         }
-                        ul.infos {
-                            li {
-                                display:flex;
-                                margin-top:10px;
-                                &:first-child {
-                                    margin-top:0;
-                                }
-                                .tit {
-                                    font-size:16px;
-                                    margin-right:auto;
-                                }
-                                .cont {
-                                    font-size:16px;
-                                    font-weight:500;
-                                    text-align:right;
-                                    span.original {
-                                        display:block;
-                                        margin-bottom:7px;
-                                        color:#888;
-                                        font-size:15px;
-                                        font-weight:400;
-                                        text-decoration:line-through;
-                                    }
-                                    em {
-                                        display:inline-block;
-                                        vertical-align:top;
-                                        margin-left:20px;
-                                        color:$point;
-                                        &:first-child {
-                                            margin-left:0;
-                                        }
-                                    }
-                                }
-                            }
-                            &.cancel {
-                                li {
-                                    .cont em {
-                                        color:$red;
-                                    }
-                                }
-                            }
+                    }
+                    .desc {
+                        margin-top:30px;
+                        color:#666;
+                        @include font;
+                        @include mobile {
+                            margin-top:15px;
+                        }
+                    }
+                }
+            }
+            .modal-foot {
+                display:flex;
+                margin-top:10px;
+                padding:0 20px 30px;
+                @include mobile {
+                    padding:0 16px 20px;
+                }
+                > .btn {
+                    flex:1;
+                    & ~ .btn {
+                        margin-left:10px;
+                        @include mobile {
+                            margin-left:5px;
                         }
                     }
                 }

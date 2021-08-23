@@ -747,3 +747,250 @@
         }
     }
 }
+
+.my-order-view {
+    display:flex;
+    @include mobile {
+        display:block;
+    }
+    .orders {
+        @include calcs(width, 540px, 1400px);
+        @include calcs(min-width, 540px, 1400px);
+        padding:50px;
+        border:1px solid $border;
+        border-radius:4px;
+        @include tablet {
+            width:48%;
+            padding:20px;
+        }
+        @include mobile {
+            width:100%;
+            padding:20px 16px;
+        }
+        .title {
+            font-size:24px;
+            font-weight:500;
+            @include mobile {
+                font-size:20px;
+            }
+        }
+        ul {
+            li {
+                margin-top:40px;
+                @include mobile {
+                    margin-top:20px;
+                }
+                .tit {
+                    margin-bottom:5px;
+                    color:#333;
+                    @include font-md;
+                    word-break:keep-all;
+                    @include mobile {
+                        margin-bottom:2px;
+                    }
+                }
+                .desc {
+                    font-size:22px;
+                    line-height:30px;
+                    font-weight:500;
+                    word-break:keep-all;
+                    @include mobile {
+                        font-size:18px;
+                        line-height:24px;
+                    }
+                }
+            }
+        }
+    }
+    .offers {
+        flex:1;
+        margin-left:25px;
+        overflow:hidden;
+        @include mobile {
+            margin-left:0;
+            margin-top:30px;
+        }
+        ul.lists {
+            display:flex;
+            flex-wrap:wrap;
+            margin:-60px 0 0 -20px;
+            @include tablet {
+                display:block;
+                margin:0;
+            }
+            li {
+                width:50%;
+                margin-top:60px;
+                padding-left:20px;
+                @include tablet {
+                    width:100%;
+                    margin-top:30px;
+                    padding-left:0;
+                    &:first-child {
+                        margin-top:0;
+                    }
+                }
+                @include mobile {
+                    margin-top:20px;
+                }
+            }
+            a.inner {
+                display:flex;
+                .thumb {
+                    position:relative;
+                    display:block;
+                    @include calcs(width, 120px, 382px);
+                    @include calcs(padding-top, 120px, 382px);
+                    border-radius:4px;
+                    overflow:hidden;
+                    img {
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                    }
+                }
+                .info {
+                    display:flex;
+                    flex-direction:column;
+                    margin-left:15px;
+                    .name {
+                        font-size:20px;
+                        line-height:1.1;
+                        font-weight:500;
+                        @include textEllipsis;
+                        @include mobile {
+                            font-size:18px;
+                        }
+                    }
+                    .score {
+                        margin:10px 0;
+                        font-size:0;
+                        white-space:nowrap;
+                        .star-rating {
+                            position:relative;
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:145px;
+                            height:24px;
+                            margin-right:10px;
+                            background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
+                            overflow:hidden;
+                            @for $i from 1 through 5 {
+                                &.pt#{$i} .on {
+                                    width:30px * $i - 5px;
+                                    @include mobile {
+                                        width:15px * $i - 2px;
+                                    }
+                                }
+                            }
+                            @include mobile {
+                                width:73px;
+                                height:12px;
+                                background-size:100%;
+                            }
+                            .on {
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                height:100%;
+                                background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
+                                background-size:auto 100%;
+                            }
+                        }
+                        p {
+                            display:inline-block;
+                            vertical-align:middle;
+                            font-size:18px;
+                            @include mobile {
+                                font-size:14px;
+                            }
+                            &.total {
+                                margin-left:4px;
+                                color:#666;
+                            }
+                        }
+                    }
+                    .price {
+                        margin-top:auto;
+                        font-size:0;
+                        white-space:nowrap;
+                        &::before {
+                            content:'￦';
+                            display:inline-block;
+                            vertical-align:middle;
+                            width:28px;
+                            height:28px;
+                            margin-right:10px;
+                            border:1px solid #999;
+                            border-radius:4px;
+                            color:#666;
+                            font-size:17px;
+                            text-align:center;
+                            line-height:26px;
+                            @include mobile {
+                                width:24px;
+                                height:24px;
+                                font-size:14px;
+                                line-height:22px;
+                            }
+                        }
+                        p {
+                            display:inline-block;
+                            vertical-align:middle;
+                            color:#666;
+                            font-size:17px;
+                            @include mobile {
+                                font-size:15px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* complete common */
+.complete-wrap {
+    padding-top:40px;
+    text-align:center;
+    @include mobile {
+        padding-top:20px;
+    }
+    .tit {
+        font-size:36px;
+        line-height:1.1;
+        font-weight:700;
+        &::before {
+            content:' ';
+            display:block;
+            width:120px;
+            height:120px;
+            margin:0 auto 60px;
+            background:url('/images/icon/icon-complete.png') center no-repeat;
+        }
+        @include mobile {
+            font-size:26px;
+            &::before {
+                width:60px;
+                height:60px;
+                margin-bottom:30px;
+                background-size:100%;
+            }
+        }
+    }
+    .desc {
+        margin-top:30px;
+        font-size:18px;
+        line-height:30px;
+        word-break:keep-all;
+        @include mobile {
+            margin-top:15px;
+            font-size:16px;
+            line-height:24px;
+        }
+    }
+}

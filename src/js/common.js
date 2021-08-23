@@ -3,6 +3,8 @@ $(function () {
     fileUpload(); // fileupload
     allChecker();
     accordion();
+    uiDropdown();
+    modalToggle();
 });
 
 $(window).on('load', function(){
@@ -211,21 +213,20 @@ function classToggle() {
 }
 
 // dropdown
-function uiDropdown(obj) { 
-    var wrap = $(obj);
-    $(obj+' .btn-toggle').on('click', function(e){
+function uiDropdown() { 
+    $('[data-toggle="dropdown"] .btn-toggle').on('click', function(e){
         var btn = $(this);
-        var lists = btn.siblings('.lists');
-        var wraps = btn.closest(obj);
+        var wrap = btn.closest('[data-toggle="dropdown"]');
 
         e.stopPropagation();
         e.preventDefault();
-        wraps.hasClass('open') ? wraps.removeClass('open') : wraps.addClass('open');
-    });
-    $('html').click(function(e){
-        if ( !$(e.target).is(wrap) ) {
-            wrap.removeClass('open');
-        }
+        wrap.hasClass('open') ? wrap.removeClass('open') : wrap.addClass('open');
+
+        $('html').click(function(e){
+            if ( !$(e.target).is(wrap) ) {
+                wrap.removeClass('open');
+            }
+        });
     });
 }
 

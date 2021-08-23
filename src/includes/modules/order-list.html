@@ -1,9 +1,41 @@
-<div class="order-list-wrap">
-    <ul class="lists">
-        <li>
-            <div class="inner">
-                
-            </div>
-        </li>
-    </ul>
-</div>
+<li>
+    <div class="inner">
+        <div class="top">
+            @@if(context.st1){
+                <span class="state end">마감</span>
+            }
+            @@if(context.st2){
+                <span class="state ing">진행중</span>
+            }
+            @@if(context.st3){
+                <span class="state cancel">취소</span>
+            }
+            <p class="date"><span class="blind">작성일</span>2021.00.00</p>
+        </div>
+        <p class="title">제목</p>
+        <div class="cont">
+            @@if(context.none){
+                <p class="none">받은 견적이 없습니다.</p>
+            }
+            @@if(context.ing){
+                <p class="ing">견적을 기다리고 있습니다.</p>
+            }
+            @@if(context.list){
+                <ul class="offer-list">
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                    <li><span><img src="/images/img/img-review.jpg" alt="지원자 이름"></span></li>
+                </ul>
+            }
+        </div>
+        @@if(context.st1){
+            <a href="/page/member_mypage_01_complete.html" class="btn btn-lg btn-point"><span>자세히 보기</span></a>
+        }
+        @@if(!context.st1){
+            <a href="/page/member_mypage_01_view.html" class="btn btn-lg btn-point"><span>자세히 보기</span></a>
+        }
+    </div>
+</li>

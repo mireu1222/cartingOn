@@ -19,12 +19,24 @@
         }
         @@if(context.mypage){
             <nav>
+                <div class="dropdown" data-toggle="dropdown">
+                    <button type="button" class="btn-toggle">이하나 고객님</button>
+                    <div class="mymenu toggle-target">
+                        <p class="tit">안녕하세요, 이하나님</p>
+                        <ul class="links">
+                            <li><a href="">받은 견적</a></li>
+                            <li><a href="" class="new">마이페이지</a></li><!-- alert '.new' -->
+                        </ul>
+                        <a href="" class="btn-logout">로그아웃</a>
+                    </div>
+                </div>
                 <ul id="gnb">
                     <li><a href="">받은견적</a></li>
                     <li><a href="">받은요청<span class="count">15</span></a></li>
                     <li><a href="/page/sub_02.html">시공점 찾기</a></li>
                 </ul>
             </nav>
+            <a href="" class="btn-alert"><span class="blind">알림</span><span class="count">15</span></a>
         }
     </div>
 </header>

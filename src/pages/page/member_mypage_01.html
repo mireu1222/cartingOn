@@ -20,9 +20,36 @@
                 mypage : '01'
             })
             <div class="contents-area">
-                @@include('./modules/order-list.html', {
-                    
-                })
+                <div class="order-list-wrap">
+                    <ul class="lists">
+                        @@loop('./modules/order-list.html', [
+                            {
+                                st1 : true,
+                                none : true
+                            },
+                            {
+                                st2 : true,
+                                ing : true
+                            },
+                            {
+                                st3 : true,
+                                list : true
+                            },
+                            {
+                                st1 : true,
+                                none : true
+                            },
+                            {
+                                st2 : true,
+                                ing : true
+                            },
+                            {
+                                st3 : true,
+                                list : true
+                            }
+                        ])
+                    </ul>
+                </div>
             </div>
         </div>
         <!-- // contents -->

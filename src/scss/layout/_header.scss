@@ -94,6 +94,131 @@ header {
                 width:112px;
                 margin-left:20px;
             }
+            .btn-alert {
+                position:relative;
+                display:block;
+                width:30px;
+                height:30px;
+                margin-left:18px;
+                background:url('/images/icon/icon-alert.png') center no-repeat;
+                .count {
+                    position:absolute;
+                    right:0;
+                    top:-5px;
+                    min-width:22px;
+                    height:22px;
+                    padding:0 3px;
+                    border-radius:11px;
+                    background:#ff8a00;
+                    color:#fff;
+                    font-size:14px;
+                    line-height:21px;
+                    font-weight:700;
+                    letter-spacing:-1px;
+                    text-align:center;
+                    transform:translateX(33%);
+                }
+            }
+            .dropdown {
+                order:2;
+                position:relative;
+                &.open {
+                    .btn-toggle::after {
+                        margin-top:-3px;
+                        transform:rotate(135deg);
+                    }
+                    .mymenu {
+                        display:block;
+                    }
+                }
+                .btn-toggle {
+                    position:relative;
+                    height:30px;
+                    padding-left:36px;
+                    padding-right:30px;
+                    font-size:17px;
+                    font-weight:500;
+                    &::before {
+                        content:' ';
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:30px;
+                        height:30px;
+                        border:3px solid #344267;
+                        border-radius:50%;
+                        background:url('/images/icon/icon-my.png') center no-repeat;
+                    }
+                    &::after {
+                        content:' ';
+                        position:absolute;
+                        top:50%;
+                        right:3px;
+                        width:10px;
+                        height:10px;
+                        margin-top:-7px;
+                        border:2px solid #333;
+                        border-top:none;
+                        border-right:none;
+                        transform:rotate(-45deg);
+                        transition:all 0.2s ease-in-out;
+                    }
+                }
+                .mymenu {
+                    display:none;
+                    position:absolute;
+                    top:100%;
+                    right:0;
+                    width:300px;
+                    margin-top:20px;
+                    padding:34px 30px;
+                    border:1px solid $border;
+                    border-radius:4px;
+                    background:#fff;
+                    box-shadow: 0px 0px 10px 0px rgba(212, 212, 212, 0.75);
+                    overflow:hidden;
+                    .tit {
+                        margin-bottom:40px;
+                        font-size:18px;
+                        font-weight:500;
+                    }
+                    ul.links {
+                        li {
+                            margin-top:25px;
+                            a {
+                                position:relative;
+                                display:inline-block;
+                                vertical-align:top;
+                                color:#666;
+                                font-size:16px;
+                                font-weight:500;
+                                &.new {
+                                    &::after {
+                                        content:' ';
+                                        position:absolute;
+                                        top:-2px;
+                                        right:-12px;
+                                        width:8px;
+                                        height:8px;
+                                        border-radius:50%;
+                                        background:#ff0000;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btn-logout {
+                        display:block;
+                        height:70px;
+                        margin:70px -30px -34px;
+                        background:#f5f5f5;
+                        font-size:18px;
+                        font-weight:500;
+                        line-height:70px;
+                        text-align:center;
+                    }
+                }
+            }
         }
     }
     @include tablet {
@@ -175,6 +300,33 @@ header {
                 transition:all 0.2s ease-in-out;
                 &.m-open {
                     opacity:1;
+                }
+            }
+            .btn-alert {
+                position:absolute;
+                right:50px;
+                top:0;
+                min-width:50px;
+                height:50px;
+                margin-left:auto;
+                background:url('/images/icon/icon-alert.png') center no-repeat;
+                background-size:auto 20px;
+                .count {
+                    position:absolute;
+                    left:50%;
+                    top:10px;
+                    min-width:18px;
+                    height:18px;
+                    padding:0 3px;
+                    border-radius:9px;
+                    background:#ff8a00;
+                    color:#fff;
+                    font-size:11px;
+                    line-height:18px;
+                    font-weight:400;
+                    letter-spacing:-1px;
+                    text-align:center;
+                    transform:translateX(10%);
                 }
             }
             nav {
@@ -265,6 +417,60 @@ header {
                     right:20px;
                     height:50px;
                     line-height:48px;
+                    font-weight:500;
+                }
+                .dropdown {
+                    text-align:center;
+                    padding-bottom:20px;
+                    border-bottom:1px solid $border;
+                    .btn-toggle {
+                        display:none;
+                    }
+                    .mymenu {
+                        .tit {
+                            font-size:18px;
+                            line-height:30px;
+                            font-weight:500;
+                        }
+                        ul.links {
+                            margin-top:20px;
+                            font-size:0;
+                            li {
+                                display:inline-block;
+                                vertical-align:top;
+                                &:last-child::after {
+                                    display:none;
+                                }
+                                &::after {
+                                    content:' ';
+                                    display:inline-block;
+                                    vertical-align:middle;
+                                    width:1px;
+                                    height:10px;
+                                    margin:0 20px;
+                                    background:#ddd;
+                                }
+                                a {
+                                    display:inline-block;
+                                    vertical-align:middle;
+                                    font-size:16px;
+                                }
+                            }
+                        }
+                        .btn-logout {
+                            position:absolute;
+                            bottom:20px;
+                            left:20px;
+                            right:20px;
+                            height:50px;
+                            border:1px solid $border;
+                            border-radius:4px;
+                            font-size:14px;
+                            font-weight:500;
+                            text-align:center;
+                            line-height:50px;
+                        }
+                    }
                 }
             }
         }
