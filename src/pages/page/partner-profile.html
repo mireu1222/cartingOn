@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            mypage : true
+        })
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-title.html', {
+                mypage : '01'
+            })
+            <div class="contents-area">
+                <div class="profile-wraps">
+                    <div class="partner-profile">
+                        <div class="head">
+                            <span class="thumb" aria-hidden="true"><img src="/images/img/img-review.jpg" alt=""></span>
+                            <div class="info">
+                                <p class="name">홍길동(한국썬팅)</p>
+                                <p class="desc">욕실공사/방수</p>
+                                <div class="star-score">
+                                    <div class="star-rating pt2" aria-hidden="true">
+                                        <span class="on"></span>
+                                    </div>
+                                    <p><span class="blind">평균 고객 만족도 5점 만점 중</span>4.9</p>
+                                    <p class="total"><span class="blind">후기</span>(43개)</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="border-tabs type2">
+                                <ul class="tabs">
+                                    <li class="active"><a href="#section01">고수정보</a></li>
+                                    <li><a href="#section02">사진/동영상</a></li>
+                                    <li><a href="#section03">리뷰<span class="count">99</span></a></li>
+                                    <li><a href="#section04">질문답변</a></li>
+                                </ul>
+                            </div>
+                            <div class="tab-contents">
+                                <section id="section01">
+                                    <div class="box">
+                                        <h3 class="sect-title">한줄소개</h3>
+                                        <p class="text">
+                                            김영진 고수님<br>
+                                            소비자님께서 하시고자 하는 모든 공사를 같은 눈높이 맞춰서 최선을 다해 시공 하겠습니다.
+                                        </p>
+                                    </div>
+                                    <div class="box flex">
+                                        <div class="col">
+                                            <h3 class="sect-title">기본정보</h3>
+                                            <ul class="icon-lists">
+                                                <li class="icon1">본인인증</li>
+                                                <li class="icon2">28회 고용됨</li>
+                                                <li class="icon3">경기 안산시</li>
+                                                <li class="icon4">연락 가능 시간 : 오전 6시~오후 10시</li>
+                                                <li class="icon5">안전거래, 계좌이체, 현금결제 가능</li>
+                                            </ul>
+                                        </div>
+                                        <div class="col">
+                                            <h3 class="sect-title">추가정보</h3>
+                                            <ul class="icon-lists">
+                                                <li class="icon6">경력 20년</li>
+                                                <li class="icon7">직원수 3명</li>
+                                                <li class="icon8">사업자등록증 등록완료</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section id="section02">
+                                    <h3 class="sect-title">사진 및 동영상</h3>
+                                    <div class="thumb-list-wrap">
+                                        <ul class="lists">
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                            <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                        </ul>
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-border-point"><span>더보기</span></button>
+                                    </div>
+                                </section>
+                                <section id="section03">
+                                    <h3 class="sect-title">리뷰</h3>
+                                    <div class="review-list-wrap">
+                                        <div class="top">
+                                            <p class="count"><span class="blind">고객 만족도 평점 5점 만점 중</span>5.0</p>
+                                            <div>
+                                                <div class="star-rating pt5" aria-hidden="true">
+                                                    <span class="on"></span>
+                                                </div>
+                                                <p class="review">4개 리뷰</p>
+                                            </div>
+                                        </div>
+                                        <ul class="lists">
+                                            <li>
+                                                <div class="review-inner">
+                                                    <div class="inner-head">
+                                                        <p class="name">최**</p>
+                                                        <span class="blind">만족도 5점 만점중 5점</span>
+                                                        <div class="star-rating pt5" aria-hidden="true">
+                                                            <span class="on"></span>
+                                                        </div>
+                                                        <p class="date"><span class="blind">리뷰 작성일</span>2021.00.00</p>
+                                                    </div>
+                                                    <p class="cont">너무 응대를 잘해주시고 꼼꼼하게 확인해주셔서 감사합니다.</p>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="review-inner">
+                                                    <div class="inner-head">
+                                                        <p class="name">최**</p>
+                                                        <span class="blind">만족도 5점 만점중 4점</span>
+                                                        <div class="star-rating pt4" aria-hidden="true">
+                                                            <span class="on"></span>
+                                                        </div>
+                                                        <p class="date"><span class="blind">리뷰 작성일</span>2021.00.00</p>
+                                                    </div>
+                                                    <ul class="photo-list">
+                                                        <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                                        <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                                        <li><a href=""><img src="/images/img/img-review.jpg" alt=""></a></li>
+                                                    </ul>
+                                                    <p class="cont">너무 응대를 잘해주시고 꼼꼼하게 확인해주셔서 감사합니다. 너무 응대를 잘해주시고 꼼꼼하게 확인해주셔서 감사합니다. 너무 응대를 잘해주시고 꼼꼼하게 확인해주셔서 감사합니다. 너무 응대를 잘해주시고 꼼꼼하게 확인해주셔서 감사합니다.</p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-border-point"><span>리뷰 더보기</span></button>
+                                        </div>
+                                    </div>
+                                </section>
+                                <section id="section04">
+                                    <h3 class="sect-title">질문답변</h3>
+                                    <ul class="qna-lists">
+                                        <li>
+                                            <p class="q">서비스가 시작되기 전 어떤 절차로 진행하나요?</p>
+                                            <p class="a">숨고 채팅, 개인톡으로 소통합니다.</p>
+                                        </li>
+                                        <li>
+                                            <p class="q">어떤 서비스를 전문적으로 제공하나요?</p>
+                                            <p class="a">디자인 시안에 표현된 다양한 기능 및 애니메이션을 파악하고 정확하게 구현하는데 초첨을 맞춥니다.</p>
+                                        </li>
+                                        <li>
+                                            <p class="q">서비스의 견적은 어떤 방식으로 산정 되나요?</p>
+                                            <p class="a">소비자와 1:1 미팅 후 현장에 방문하여 견적서가 작성 됩니다.</p>
+                                        </li>
+                                        <li>
+                                            <p class="q">완료한 서비스 중 대표적인 서비스는 무엇인가요? 소요 시간은 얼마나 소요 되었나요?</p>
+                                            <p class="a">인테리어 현장에 따라 다소 차이가 있을 수 있으며 대부분 약 2주</p>
+                                        </li>
+                                        <li>
+                                            <p class="q">A/S또는 환불 규정은 어떻게 되나요?</p>
+                                            <p class="a">건설 기준법에 의하여 하자 이행보증 증권을 첨부합니다.</p>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="floating">
+                        <div class="foot">
+                            <p>김영진 고수에게 원하는 서비스의 견적을 받아보세요</p>
+                            <a href="" class="btn btn-point"><span>견적 요청하기</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+
+    <script>
+        $(function(){
+            $('.border-tabs .tabs a').click(function(e){
+                e.preventDefault();
+
+                var tab = $(this);
+                var target = tab.attr('href');
+                var top = $(target).offset().top;
+                
+                $('html, body').animate({
+                    'scrollTop' : top - 100
+                }, 300);
+                setTimeout(function(){
+                    tab.closest('li').siblings('li').removeClass('active');
+                    tab.closest('li').addClass('active');
+                }, 300);
+            });
+
+            $(window).scroll(function(){
+                var st = $(this).scrollTop();
+                var sec01ot = $('#section01').offset().top - 110;
+                var sec02ot = $('#section02').offset().top - 110;
+                var sec03ot = $('#section03').offset().top - 110;
+                var sec04ot = $('#section04').offset().top - 110;
+
+                console.log(st);
+
+                if (st < sec02ot){
+                    $('.border-tabs ul.tabs li').removeClass('active');
+                    $('.border-tabs ul.tabs li:first-child').addClass('active');
+                } else if (st < sec03ot) {
+                    $('.border-tabs ul.tabs li').removeClass('active');
+                    $('.border-tabs ul.tabs li:nth-child(2)').addClass('active');
+                } else if (st < sec04ot) {
+                    $('.border-tabs ul.tabs li').removeClass('active');
+                    $('.border-tabs ul.tabs li:nth-child(3)').addClass('active');
+                } else if (st > sec04ot) {
+                    $('.border-tabs ul.tabs li').removeClass('active');
+                    $('.border-tabs ul.tabs li:nth-child(4)').addClass('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

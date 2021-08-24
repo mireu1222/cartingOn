@@ -57,6 +57,54 @@
     }
 }
 
+.star-score {
+    font-size:0;
+    white-space:nowrap;
+    .star-rating {
+        position:relative;
+        display:inline-block;
+        vertical-align:middle;
+        width:145px;
+        height:24px;
+        margin-right:10px;
+        background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
+        overflow:hidden;
+        @for $i from 1 through 5 {
+            &.pt#{$i} .on {
+                width:30px * $i - 5px;
+                @include mobile {
+                    width:15px * $i - 2px;
+                }
+            }
+        }
+        @include mobile {
+            width:73px;
+            height:12px;
+            background-size:100%;
+        }
+        .on {
+            position:absolute;
+            top:0;
+            left:0;
+            height:100%;
+            background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
+            background-size:auto 100%;
+        }
+    }
+    p {
+        display:inline-block;
+        vertical-align:middle;
+        font-size:18px;
+        @include mobile {
+            font-size:14px;
+        }
+        &.total {
+            margin-left:4px;
+            color:#666;
+        }
+    }
+}
+
 .work-time-info {
     .tit {
         margin-bottom:12px;
@@ -666,48 +714,8 @@
                         }
                     }
                 }
-                .score {
+                .star-score {
                     margin-top:15px;
-                    font-size:0;
-                    .star-rating {
-                        position:relative;
-                        display:inline-block;
-                        vertical-align:middle;
-                        width:145px;
-                        height:24px;
-                        margin-right:10px;
-                        background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
-                        overflow:hidden;
-                        @for $i from 1 through 5 {
-                            &.pt#{$i} .on {
-                                width:30px * $i - 5px;
-                                @include mobile {
-                                    width:15px * $i - 2px;
-                                }
-                            }
-                        }
-                        @include mobile {
-                            width:73px;
-                            height:12px;
-                            background-size:100%;
-                        }
-                        .on {
-                            position:absolute;
-                            top:0;
-                            left:0;
-                            height:100%;
-                            background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
-                            background-size:auto 100%;
-                        }
-                    }
-                    p {
-                        display:inline-block;
-                        vertical-align:middle;
-                        font-size:18px;
-                        @include mobile {
-                            font-size:14px;
-                        }
-                    }
                 }
                 .option {
                     margin-top:20px;
@@ -865,53 +873,8 @@
                             font-size:18px;
                         }
                     }
-                    .score {
+                    .star-score {
                         margin:10px 0;
-                        font-size:0;
-                        white-space:nowrap;
-                        .star-rating {
-                            position:relative;
-                            display:inline-block;
-                            vertical-align:middle;
-                            width:145px;
-                            height:24px;
-                            margin-right:10px;
-                            background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
-                            overflow:hidden;
-                            @for $i from 1 through 5 {
-                                &.pt#{$i} .on {
-                                    width:30px * $i - 5px;
-                                    @include mobile {
-                                        width:15px * $i - 2px;
-                                    }
-                                }
-                            }
-                            @include mobile {
-                                width:73px;
-                                height:12px;
-                                background-size:100%;
-                            }
-                            .on {
-                                position:absolute;
-                                top:0;
-                                left:0;
-                                height:100%;
-                                background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
-                                background-size:auto 100%;
-                            }
-                        }
-                        p {
-                            display:inline-block;
-                            vertical-align:middle;
-                            font-size:18px;
-                            @include mobile {
-                                font-size:14px;
-                            }
-                            &.total {
-                                margin-left:4px;
-                                color:#666;
-                            }
-                        }
                     }
                     .price {
                         margin-top:auto;
@@ -991,6 +954,896 @@
             margin-top:15px;
             font-size:16px;
             line-height:24px;
+        }
+    }
+}
+
+/* chat */
+.chat-wrap {
+    .head {
+        display:flex;
+        align-items:center;
+        justify-content:space-between;
+        margin-bottom:25px;
+        @include tablet {
+            display:block;
+        }
+        .left {
+            display:flex;
+            align-items:center;
+            overflow:hidden;
+            .btn-back {
+                display:block;
+                width:32px;
+                min-width:32px;
+                height:32px;
+                background:url('/images/icon/icon-back2.gif') center no-repeat;
+            }
+            .name {
+                margin-left:20px;
+                font-size:18px;
+                @include textEllipsis;
+                @include mobile {
+                    margin-left:10px;
+                    margin-right:10px;
+                    font-size:16px;
+                }
+            }
+            .btns {
+                position:relative;
+                margin-left:20px;
+                padding-left:21px;
+                font-size:0;
+                white-space:nowrap;
+                @include tablet {
+                    margin-left:auto;
+                    padding-left:0;
+                }
+                &::before {
+                    content:' ';
+                    position:absolute;
+                    left:0;
+                    top:50%;
+                    width:1px;
+                    height:14px;
+                    margin-top:-7px;
+                    background:#ddd;
+                    @include tablet {
+                        display:none;
+                    }
+                }
+                > a {
+                    display:inline-block;
+                    vertical-align:top;
+                    width:32px;
+                    height:32px;
+                    margin-right:15px;
+                    border-radius:50%;
+                    background:#ebebeb;
+                    background-size:100%;
+                    background-repeat:no-repeat;
+                    background-position:center;
+                    @include mobile {
+                        margin-right:5px;
+                        &:last-child {
+                            margin-right:0;
+                        }
+                    }
+                    &.btn1 {
+                        background-image:url('/images/icon/icon-call.png');
+                    }
+                    &.btn2 {
+                        background-image:url('/images/icon/icon-heart.png');
+                    }
+                    &.btn3 {
+                        background-color:transparent;
+                        background-image:url('/images/icon/icon-more.png');
+                    }
+                }
+            }
+        }
+        .right {
+            display:flex;
+            @include tablet {
+                margin-top:20px;
+            }
+            .btn {
+                width:182px;
+                margin-left:10px;
+                @include tablet {
+                    flex:1;
+                    width:auto;
+                }
+                &:first-child {
+                    margin-left:0;
+                }
+            }
+        }
+    }
+    .body {
+        display:flex;
+        border:1px solid #f5f5f5;
+        @include tablet {
+            display:block;
+        }
+        .chat-area {
+            position:relative;
+            flex:1;
+            background:#f5f5f5;
+            .chats {
+                position:absolute;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                padding:20px 50px;
+                overflow-y:scroll;
+                @include tablet {
+                    position:relative;
+                    height:80vh;
+                    padding:10px;
+                }
+                @include mobile {
+                    height:60vh;
+                }
+                .date {
+                    padding:20px 0;
+                    font-size:16px;
+                    text-align:center;
+                    @include mobile {
+                        font-size:14px;
+                    }
+                }
+                .chat-box {
+                    display:flex;
+                    padding:10px 0;
+                    &.to {
+                        flex-direction:row-reverse;
+                    }
+                    .thumb {
+                        align-self:flex-start;
+                        position:relative;
+                        display:block;
+                        width:40px;
+                        min-width:40px;
+                        height:40px;
+                        background:#fff;
+                        border-radius:50%;
+                        overflow:hidden;
+                        @include mobile {
+                            width:30px;
+                            min-width:30px;
+                            height:30px;
+                        }
+                        img {
+                            width:100%;
+                            height:100%;
+                            object-fit:cover;
+                        }
+                    }
+                    .message {
+                        max-width:270px;
+                        margin:0 10px;
+                        padding:20px;
+                        border-radius:10px;
+                        background:#fff;
+                        @include mobile {
+                            max-width:250px;
+                            margin:0 5px;
+                            padding:10px;
+                        }
+                        .partner {
+                            position:relative;
+                            padding-left:28px;
+                            font-weight:500;
+                            font-size:16px;
+                            line-height:22px;
+                            &::before {
+                                content:'￦';
+                                position:absolute;
+                                top:0;
+                                left:0;
+                                width:22px;
+                                height:22px;
+                                border:1px solid $border;
+                                border-radius:2px;
+                                color:666;
+                                font-size:14px;
+                                line-height:20px;
+                                font-weight:400;
+                                text-align:center;
+                            }
+                            @include mobile {
+                                font-size:14px;
+                                line-height:20px;
+                                &::before {
+                                    width:20px;
+                                    height:20px;
+                                    font-size:12px;
+                                    line-height:18px;
+                                }
+                            }
+                        }
+                        .partner-ment {
+                            margin-top:10px;
+                            color:#666;
+                            @include font-sm;
+                            word-break:keep-all;
+                            @include mobile {
+                                margin-top:5px;
+                            }
+                        }
+                        .offer-info {
+                            margin:15px 0;
+                            padding:15px 0;
+                            border-top:1px solid $border;
+                            border-bottom:1px solid $border;
+                            > li {
+                                display:flex;
+                                margin-top:10px;
+                                @include font-sm;
+                                &:first-child {
+                                    margin-top:0;
+                                }
+                                .tit {
+                                    margin-right:10px;
+                                    color:#666;
+                                    white-space:nowrap;
+                                }
+                                .desc,
+                                .price {
+                                    margin-left:auto;
+                                    font-weight:500;
+                                }
+                                .desc {
+                                    color:#333;
+                                }
+                                .price {
+                                    color:$point;
+                                }
+                            }
+                        }
+                        .text {
+                            color:#666;
+                            @include font-sm;
+                            word-break:keep-all;
+                        }
+                        .system {
+                            .tit {
+                                margin-bottom:10px;
+                                color:$point;
+                                font-size:16px;
+                                font-weight:500;
+                                @include mobile {
+                                    margin-bottom:5px;
+                                    font-size:14px;
+                                }
+                            }
+                            .tit-desc {
+                                margin-top:20px;
+                                margin-bottom:25px;
+                                font-size:14px;
+                                font-weight:500;
+                                @include mobile {
+                                    margin-top:10px;
+                                    margin-bottom:15px;
+                                    font-size:13px;
+                                }
+                            }
+                            .text.icon {
+                                padding-left:30px;
+                                background:url('/images/icon/icon-syst.png') 5px 1px no-repeat;
+                            }
+                            .btn {
+                                display:block;
+                                width:100%;
+                                margin-top:10px;
+                            }
+                            .btn.arrow {
+                                position:relative;
+                                padding:0 20px;
+                                text-align:left;
+                                &::after {
+                                    content:' ';
+                                    position:absolute;
+                                    top:50%;
+                                    right:15px;
+                                    width:8px;
+                                    height:8px;
+                                    margin-top:-4px;
+                                    border:1px solid #fff;
+                                    border-top:none;
+                                    border-right:none;
+                                    transform:rotate(-135deg);
+                                }
+                            }
+                        }
+                    }
+                    .dt {
+                        padding:6px 0;
+                        color:#aaa;
+                        font-size:13px;
+                        align-self:flex-end;
+                        white-space:nowrap;
+                        @include mobile {
+                            font-size:12px;
+                        }
+                    }
+                    .state {
+                        margin:0 10px;
+                        padding:6px 0;
+                        color:#aaa;
+                        font-size:13px;
+                        align-self:flex-end;
+                        white-space:nowrap;
+                        @include mobile {
+                            font-size:12px;
+                            margin:0 5px;
+                        }
+                    }
+                }
+            }
+        }
+        .partners-info {
+            width:410px;
+            min-width:410px;
+            padding:20px;
+            padding-bottom:40px;
+            @include tablet {
+                width:100%;
+                min-width:100%;
+                padding:20px 16px;
+            }
+            .prt {
+                display:flex;
+                padding-bottom:20px;
+                border-bottom:1px solid $border;
+                .thumb {
+                    position:relative;
+                    display:block;
+                    width:90px;
+                    min-width:90px;
+                    height:90px;
+                    border-radius:4px;
+                    overflow:hidden;
+                    img {
+                        position:absolute;
+                        top:0;
+                        left:0;
+                        width:100%;
+                        height:100%;
+                        object-fit:cover;
+                    }
+                }
+                .info {
+                    display:flex;
+                    flex-direction:column;
+                    flex:1;
+                    margin-left:15px;
+                    .name {
+                        margin-bottom:5px;
+                        font-size:20px;
+                        line-height:1.1;
+                        font-weight:500;
+                        @include textEllipsis;
+                        @include mobile {
+                            font-size:18px;
+                        }
+                    }
+                    .desc {
+                        margin-bottom:5px;
+                        color:#666;
+                        @include font;
+                        word-break:keep-all;
+                    }
+                    .star-score {
+                        margin-top:auto;
+                        transform-origin:0 100%;
+                        transform:scale(80%);
+                        @include mobile {
+                            transform:scale(100%);
+                        }
+                    }
+                }
+            }
+            .more-info {
+                margin-top:25px;
+                @include mobile {
+                    margin-top:20px;
+                }
+                .tab-contents {
+                    padding-top:30px;
+                    > section {
+                        margin-top:60px;
+                        @include mobile {
+                            margin-top:30px;
+                        }
+                        &:first-child {
+                            margin-top:0;
+                        }
+                        .sect-title {
+                            margin-bottom:20px;
+                            font-size:18px;
+                            font-weight:500;
+                            @include mobile {
+                                margin-bottom:15px;
+                                font-size:16px;
+                            }
+                        }
+                        .introduce {
+                            p {
+                                color:#666;
+                                @include font;
+                            }
+                            .link-point {
+                                margin-top:20px;
+                                font-weight:500;
+                            }
+                        }
+                        .icon-lists {
+                            li {
+                                margin-top:10px;
+                                padding-left:30px;
+                                background-repeat:no-repeat;
+                                background-position:0 0;
+                                color:#666;
+                                @include font;
+                                @include mobile {
+                                    margin-top:6px;
+                                    background-size:auto 22px;
+                                }
+                                &:first-child {
+                                    margin-top:0;
+                                }
+                                @for $i from 1 through 8 {
+                                    &.icon#{$i} {
+                                        background-image:url('/images/icon/icon-intro#{$i}.png');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 고수 프로필 */
+.profile-wraps {
+    display:flex;
+    @include mobile {
+        display:block;
+    }
+    .partner-profile {
+        position:relative;
+        @include calcs(width, 980px, 1400px);
+        @include calcs(min-width, 980px, 1400px);
+        @include mobile {
+            width:100%;
+            min-width:100%;
+        }
+        > .head {
+            display:flex;
+            margin-bottom:40px;
+            @include mobile {
+                margin-bottom:20px;
+            }
+            .thumb {
+                display:block;
+                width:130px;
+                min-width:130px;
+                height:130px;
+                border-radius:4px;
+                overflow:hidden;
+                @include mobile {
+                    width:90px;
+                    min-width:90px;
+                    height:90px;
+                }
+                img {
+                    width:100%;
+                    height:100%;
+                    object-fit:cover;
+                }
+            }
+            .info {
+                display:flex;
+                flex-direction:column;
+                margin-left:20px;
+                @include mobile {
+                    margin-left:15px;
+                }
+                .name {
+                    font-size:28px;
+                    line-height:1.2;
+                    font-weight:500;
+                    word-break:keep-all;
+                    @include mobile {
+                        font-size:20px;
+                    }
+                }
+                .desc {
+                    margin-top:10px;
+                    color:#666;
+                    @include font;
+                    @include mobile {
+                        margin-top:5px;
+                    }
+                }
+                .star-score {
+                    margin-top:auto;
+                }
+            }
+        }
+        > .body {
+            position:relative;
+            .border-tabs {
+                position:sticky;
+                top:0;
+                left:0;
+                width:100%;
+                padding-top:20px;
+                background:#fff;
+                z-index:100;
+                @include tablet {
+                    top:50px;
+                    padding-top:10px;
+                }
+            }
+            .tab-contents {
+                padding-top:70px;
+                @include mobile {
+                    padding-top:40px;
+                }
+                > section {
+                    margin-top:100px;
+                    @include mobile {
+                        margin-top:60px;
+                    }
+                    &:first-child {
+                        margin-top:0;
+                    }
+                    .sect-title {
+                        margin-bottom:20px;
+                        font-size:24px;
+                        font-weight:700;
+                        @include mobile {
+                            margin-bottom:15px;
+                            font-size:18px;
+                        }
+                    }
+                    .text {
+                        color:#666;
+                        @include font;
+                        word-break:keep-all;
+                    }
+                    .box {
+                        margin-top:60px;
+                        @include mobile {
+                            margin-top:30px;
+                        }
+                        &:first-child {
+                            margin-top:0;
+                        }
+                        &.flex {
+                            display:flex;
+                            @include mobile {
+                                display:block;
+                            }
+                            .col {
+                                flex:1;
+                                @include mobile {
+                                    margin-top:30px;
+                                    &:first-child {
+                                        margin-top:0;
+                                    }
+                                }
+                            }
+                        }
+                        .icon-lists {
+                            li {
+                                margin-top:10px;
+                                padding-left:30px;
+                                background-position:0 0;
+                                background-repeat:no-repeat;
+                                color:#666;
+                                @include font;
+                                word-break:keep-all;
+                                @include mobile {
+                                    background-size:auto 22px;
+                                }
+                                @for $i from 1 through 8 {
+                                    &.icon#{$i} {
+                                        background-image:url('/images/icon/icon-intro#{$i}.png');
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .btn-group {
+                        margin-top:40px;
+                        @include mobile {
+                            margin-top:20px;
+                        }
+                    }
+                    .thumb-list-wrap {
+                        overflow:hidden;
+                        > ul.lists {
+                            display:flex;
+                            flex-wrap:wrap;
+                            margin:-15px 0 0 -15px;
+                            @include mobile {
+                                margin:-10px 0 0 -10px;
+                            }
+                            > li {
+                                width:20%;
+                                margin-top:15px;
+                                padding-left:15px;
+                                @include mobile {
+                                    margin-top:10px;
+                                    padding-left:10px;
+                                }
+                                a {
+                                    position:relative;
+                                    display:block;
+                                    width:100%;
+                                    @include calcs(padding-top, 150px, 185px);
+                                    border-radius:4px;
+                                    overflow:hidden;
+                                    img {
+                                        position:absolute;
+                                        top:0;
+                                        left:0;
+                                        width:100%;
+                                        height:100%;
+                                        object-fit:cover;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .review-list-wrap {
+                        .top {
+                            display:flex;
+                            align-items:center;
+                            padding-bottom:25px;
+                            border-bottom:1px solid $border;
+                            @include mobile {
+                                padding-bottom:15px;
+                            }
+                            .count {
+                                margin-right:15px;
+                                font-size:55px;
+                                font-weight:700;
+                                @include mobile {
+                                    font-size:40px;
+                                }
+                            }
+                            .star-rating {
+                                position:relative;
+                                display:inline-block;
+                                vertical-align:middle;
+                                width:145px;
+                                height:24px;
+                                margin-right:10px;
+                                background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
+                                overflow:hidden;
+                                @for $i from 1 through 5 {
+                                    &.pt#{$i} .on {
+                                        width:30px * $i - 5px;
+                                        @include mobile {
+                                            width:15px * $i - 2px;
+                                        }
+                                    }
+                                }
+                                @include mobile {
+                                    width:73px;
+                                    height:12px;
+                                    background-size:100%;
+                                }
+                                .on {
+                                    position:absolute;
+                                    top:0;
+                                    left:0;
+                                    height:100%;
+                                    background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
+                                    background-size:auto 100%;
+                                }
+                            }
+                            .review {
+                                margin-top:10px;
+                                color:#666;
+                                font-size:14px;
+                            }
+                        }
+                        > ul.lists {
+                            margin-top:40px;
+                            @include mobile {
+                                margin-top:20px;
+                            }
+                            > li {
+                                margin-top:60px;
+                                @include mobile {
+                                    margin-top:30px;
+                                }
+                                &:first-child {
+                                    margin-top:0;
+                                }
+                                .review-inner {
+                                    .inner-head {
+                                        display:flex;
+                                        align-items:center;
+                                        .name {
+                                            font-size:16px;
+                                            font-weight:500;
+                                            @include mobile {
+                                                font-size:14px;
+                                            }
+                                        }
+                                        .star-rating {
+                                            position:relative;
+                                            display:inline-block;
+                                            vertical-align:middle;
+                                            width:97px;
+                                            height:16px;
+                                            margin:0 10px;
+                                            background:url('/images/bg/bg-star-off.gif') 0 0 no-repeat;
+                                            background-size:100%;
+                                            overflow:hidden;
+                                            @for $i from 1 through 5 {
+                                                &.pt#{$i} .on {
+                                                    width:20px * $i - 3px;
+                                                    @include mobile {
+                                                        width:15px * $i - 2px;
+                                                    }
+                                                }
+                                            }
+                                            @include mobile {
+                                                width:73px;
+                                                height:12px;
+                                                background-size:100%;
+                                            }
+                                            .on {
+                                                position:absolute;
+                                                top:0;
+                                                left:0;
+                                                height:100%;
+                                                background:url('/images/bg/bg-star-on.gif') 0 0 no-repeat;
+                                                background-size:auto 100%;
+                                            }
+                                        }
+                                        .date {
+                                            color:#666;
+                                            font-size:14px;
+                                            @include mobile {
+                                                font-size:13px;
+                                            }
+                                        }
+                                    }
+                                    .photo-list {
+                                        display:flex;
+                                        margin-top:15px;
+                                        @include mobile {
+                                            margin-top:10px;
+                                        }
+                                        li {
+                                            width:calc((100% - 60px) / 5);
+                                            margin-left:15px;
+                                            @include mobile {
+                                                width:calc((100% - 40px) / 5);
+                                                margin-left:10px;
+                                            }
+                                            &:first-child {
+                                                margin-left:0;
+                                            }
+                                            a {
+                                                position:relative;
+                                                display:block;
+                                                width:100%;
+                                                @include calcs(padding-top, 150px, 185px);
+                                                border-radius:4px;
+                                                overflow:hidden;
+                                                img {
+                                                    position:absolute;
+                                                    top:0;
+                                                    left:0;
+                                                    width:100%;
+                                                    height:100%;
+                                                    object-fit:cover;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .cont {
+                                        margin-top:20px;
+                                        color:#666;
+                                        @include font;
+                                        @include mobile {
+                                            margin-top:10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .qna-lists {
+                        li {
+                            margin-top:40px;
+                            word-break:keep-all;
+                            @include mobile {
+                                margin-top:20px;
+                            }
+                            &:first-child {
+                                margin-top:0;
+                            }
+                            .q {
+                                @include font-md;
+                                font-weight:500;
+                                &::before {
+                                    content:'Q.';
+                                    margin-right:4px;
+                                }
+                            }
+                            .a {
+                                margin-top:10px;
+                                color:#666;
+                                @include font;
+                                @include mobile {
+                                    margin-top:5px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .floating {
+        position:relative;
+        flex:1;
+        margin-left:20px;
+        @include mobile {
+            margin-left:0;
+        }
+    }
+    .foot {
+        position:sticky;
+        top:20px;
+        width:100%;
+        max-width:300px;
+        margin-left:auto;
+        padding:20px;
+        border:1px solid $border;
+        border-radius:10px;
+        text-align:center;
+        @include tablet {
+            top:70px;
+        }
+        @include mobile {
+            position:fixed;
+            top:auto;
+            right:0;
+            bottom:0;
+            left:0;
+            max-width:none;
+            width:100%;
+            padding:16px;
+            background:#fff;
+            border:none;
+            border-top:2px solid $border;
+            border-radius:0;
+            z-index:600;
+        }
+        p {
+            max-width:182px;
+            margin:0 auto;
+            @include font;
+            word-break:keep-all;
+        }
+        .btn {
+            display:block;
+            margin-top:15px;
         }
     }
 }
