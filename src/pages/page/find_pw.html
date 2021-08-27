@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html')
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            <div class="contents-area">
+                <div class="member-wrap">
+                    <h2 class="title">비밀번호 찾기</h2>
+                    <form action="">
+                        <div class="form-wrap">
+                            <div class="row">
+                                <label for="ipt01">이메일</label>
+                                <div class="forms">
+                                    <input type="text" id="ipt01" class="form-control" placeholder="example@carting.com">
+                                </div>
+                            </div>
+                        </div>
+                        <p class="info-txt">가입하신 이메일 주소를 입력해주시면<br>새로운 비밀번호를 설정 가능한 링크를 보내드립니다.</p>
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-lg btn-point"><span>이메일 전송하기</span></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+    </div>
+</body>
+</html>

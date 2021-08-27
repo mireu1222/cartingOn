@@ -65,10 +65,46 @@
                         <p class="desc">요청서를 중단하던 중 에러가 발생했습니다.<br>다시 시도해주시기 바랍니다.</p>
                     </div>
                 }
+                @@if(context.id === 'modal-info'){
+                    <div class="pay-info-cont">
+                        <p class="tit">입금 후 서비스를 제대로 받지 못할까봐 걱정되시나요?</p>
+                        <p class="desc">안전거래란 우진아님이 거래금액을 입금하시면 숨고에서 안전하게 보관해두었다가 서비스가 완료된 것을 확인 후, 고수님에게 거래금액을 지불해드리는 거래방식입니다.</p>
+                        <p class="info"><span>안전거래란</span></p>
+                        <ul class="pay-chk">
+                            <li>
+                                <span class="chk-wrap">
+                                    <input type="checkbox" id="chk01-1" name="chk01">
+                                    <label for="chk01-1">거래 진행시 상대방과 충분히 상의하고 별도로 계약서를 작성하세요.</label>
+                                </span>
+                            </li>
+                            <li>
+                                <span class="chk-wrap">
+                                    <input type="checkbox" id="chk01-2" name="chk01">
+                                    <label for="chk01-2">단순 변심으로 인한 안전 거래 취소 시 수수료가 발생하는 것에 동의합니다.</label>
+                                </span>
+                            </li>
+                        </ul>
+                        <div class="bt-btn"><a href="" class="link-cont">이용약관 확인하기</a></div>
+                    </div>
+                }
+                @@if(context.id === 'modal-pay-cancel'){
+                    <p class="modal-tit2">안전거래를 취소했어요</p>
+                    <p class="modal-desc">김영진(공간연출자)고수님에게 안전거래를 취소했어요</p>
+                }
+                @@if(context.id === 'modal-employ'){
+                    <p class="modal-tit2">고용하시겠습니까?</p>
+                    <p class="modal-desc">김영진(공간연출자)고수님의<br>일정 및 금액에 대해 충분히 협의하셨다면<br>고용하기를 눌러주세요</p>
+                }
             </div>
             @@if(context.button){
                 <div class="modal-foot">
                     <button type="button" class="btn btn-lg btn-point"@@if(context.disabled){ disabled}@@if(context.close){ data-toggle="modal-close"}><span>@@button</span></button>@@if(context.disabled){<!-- 활성화시 disabled 삭제 -->}
+                </div>
+            }
+            @@if(context.button2){
+                <div class="modal-foot">
+                    <button type="button" class="btn btn-lg btn-point"><span>@@button2</span></button>
+                    <button type="button" class="btn btn-lg btn-gray" data-toggle="modal-close"><span>취소</span></button>
                 </div>
             }
         </div>

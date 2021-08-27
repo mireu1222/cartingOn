@@ -50,10 +50,11 @@
             line-height:1;
         }
     }
-    &.num-type {
+    &.shape-type {
         > li {
             padding-left:20px;
             &::before {
+                content:'※';
                 width:20px;
                 height:auto;
                 margin-top:0;
@@ -61,27 +62,8 @@
                 margin-right:0;
                 background:none;
             }
-            @for $i from 1 through 9 {
-                &:nth-child(#{$i})::before {
-                    content:'#{$i})';
-                }
-            }
             .bullet-list {
                 margin-top:5px;
-            }
-        }
-    }
-    &.small {
-        > li {
-            color:#666;
-            @include font-sm;
-            &::before {
-                content:'*';
-                width:10px;
-                height:auto;
-                margin-top:0;
-                margin-right:0;
-                background:none;
             }
         }
     }

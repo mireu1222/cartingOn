@@ -1847,3 +1847,487 @@
         }
     }
 }
+
+/* 안전거래 상세정보 */
+.pay-info-view {
+    > .title {
+        margin-bottom:40px;
+        font-size:30px;
+        font-weight:700;
+        @include mobile {
+            margin-bottom:20px;
+            font-size:24px;
+        }
+    }
+    .ptn {
+        display:flex;
+        align-items:center;
+        padding:15px 20px;
+        border:1px solid $border;
+        @include mobile {
+            padding:10px 16px;
+        }
+        .thumb {
+            display:block;
+            width:76px;
+            min-width:76px;
+            height:76px;
+            margin-right:16px;
+            border-radius:50%;
+            overflow:hidden;
+            @include mobile {
+                width:50px;
+                min-width:50px;
+                height:50px;
+                margin-right:10px;
+            }
+            img {
+                width:100%;
+                height:100%;
+                object-fit:cover;
+            }
+        }
+        .info {
+            .name {
+                font-size:20px;
+                line-height:1.2;
+                font-weight:500;
+                @include mobile {
+                    font-size:18px;
+                }
+            }
+            .desc {
+                margin-top:5px;
+                color:#666;
+                @include font;
+            }
+        }
+        .btn-chat {
+            display:block;
+            width:40px;
+            min-width:40px;
+            height:40px;
+            margin-left:auto;
+            background:url('/images/icon/icon-chat.gif') center no-repeat;
+            @include mobile {
+                width:30px;
+                min-width:30px;
+                height:30px;
+                background-size:30px;
+            }
+        }
+    }
+    .pay-infos {
+        margin:40px 0;
+        @include mobile {
+            margin:30px 0;
+        }
+        li {
+            display:flex;
+            justify-content:space-between;
+            margin-top:30px;
+            font-size:18px;
+            @include mobile {
+                margin-top:20px;
+                font-size:16px;
+            }
+            &:first-child {
+                margin-top:0;
+            }
+            .tit {
+                font-weight:700;
+            }
+            .state {
+                font-weight:500;
+            }
+        }
+    }
+    .deal-steps {
+        padding:25px 16px;
+        border:1px solid $border;
+        background:$disabled;
+        @include mobile {
+            padding:20px 16px;
+        }
+        ol {
+            position:relative;
+            display:flex;
+            justify-content:space-between;
+            width:100%;
+            max-width:850px;
+            margin:0 auto;
+            &::before {
+                content:' ';
+                position:absolute;
+                top:27px;
+                left:30px;
+                right:30px;
+                height:1px;
+                background:#eee;
+                @include mobile {
+                    top:18px;
+                }
+            }
+            li {
+                position:relative;
+                text-align:center;
+                span.num {
+                    display:block;
+                    width:55px;
+                    height:55px;
+                    margin:0 auto 10px;
+                    border-radius:50%;
+                    background:#ddd;
+                    color:#aaa;
+                    font-size:20px;
+                    line-height:55px;
+                    font-weight:700;
+                    text-align:center;
+                    @include mobile {
+                        width:36px;
+                        height:36px;
+                        font-size:16px;
+                        line-height:36px;
+                    }
+                }
+                p {
+                    color:#aaa;
+                    font-size:18px;
+                    font-weight:500;
+                    @include mobile {
+                        font-size:14px;
+                    }
+                }
+                &.active {
+                    span.num {
+                        background:$point;
+                        color:#fff;
+                    }
+                    p {
+                        color:$point;
+                    }
+                }
+            }
+        }
+    }
+    .step-info {
+        margin-top:20px;
+        padding:30px 16px;
+        background:$disabled;
+        @include mobile {
+            margin-top:10px;
+            padding:20px 16px;
+        }
+        .area {
+            position:relative;
+            max-width:850px;
+            margin:0 auto;
+            .tit {
+                margin-bottom:10px;
+                font-size:18px;
+                font-weight:700;
+                @include mobile {
+                    font-size:16px;
+                }
+            }
+            .desc {
+                color:#666;
+                @include font;
+            }
+            .btn-cancel {
+                position:absolute;
+                bottom:0;
+                right:0;
+                color:#aaa;
+                @include font;
+                @include mobile {
+                    position:relative;
+                    bottom:auto;
+                    right:auto;
+                    display:inline-block;
+                    vertical-align:top;
+                    margin-top:10px;
+                }
+            }
+        }
+    }
+}
+
+/* 알림설정 */
+.alarm-setting {
+    > h3.title {
+        margin-bottom:40px;
+        font-size:30px;
+        font-weight:700;
+        @include mobile {
+            margin-bottom:20px;
+            font-size:24px;
+        }
+        small {
+            display:block;
+            margin-top:5px;
+            color:#666;
+            @include font;
+            font-weight:400;
+        }
+    }
+    .setting-flex {
+        display:flex;
+        flex-wrap:wrap;
+        @include tablet {
+            display:block;
+        }
+        .box {
+            width:calc((100% - 90px) / 3);
+            margin-left:45px;
+            padding:35px 40px 40px;
+            border:1px solid $border;
+            @include tablet {
+                width:100%;
+                margin-left:0;
+                margin-top:30px;
+                padding:30px 20px;
+            }
+            @include mobile {
+                margin-top:10px;
+                padding:20px 16px;
+            }
+            &:first-child {
+                margin-left:0;
+            }
+            &.full {
+                display:flex;
+                align-items:center;
+                width:100%;
+                margin-top:50px;
+                margin-left:0;
+                @include tablet {
+                    display:block;
+                    margin-top:30px;
+                }
+                .left {
+                    flex:1;
+                }
+                > .bullet-list {
+                    flex:1;
+                    padding-left:20px;
+                    @include tablet {
+                        margin-top:20px;
+                        padding-left:0;
+                    }
+                    li {
+                        color:#aaa;
+                    }
+                }
+            }
+            .tit {
+                font-size:24px;
+                font-weight:500;
+                @include mobile {
+                    font-size:20px;
+                }
+            }
+            .desc {
+                margin-top:5px;
+                color:#666;
+                @include font-md;
+                word-break:keep-all;
+            }
+            .alarm-list {
+                margin-top:25px;
+                li {
+                    display:flex;
+                    align-items:center;
+                    margin-top:15px;
+                    p {
+                        color:#666;
+                        @include font-md;
+                    }
+                    .chk-switch {
+                        margin-left:auto;
+                    }
+                }
+            }
+            .time-setting {
+                display:flex;
+                align-items:center;
+                margin-top:30px;
+                @include mobile {
+                    flex-wrap:wrap;
+                    margin-top:15px;
+                }
+                .rounded-select-wrap {
+                    min-width:180px;
+                    @include mobile {
+                        min-width:auto;
+                        width:calc(100% - 128px);
+                        margin-top:5px;
+                    }
+                }
+                p {
+                    margin:0 16px 0 8px;
+                    color:#666;
+                    @include font-md;
+                    white-space:nowrap;
+                    @include mobile {
+                        width:40px;
+                        margin:0;
+                        margin-top:5px;
+                        text-align:right;
+                    }
+                }
+                @include mobile {
+                    .chk-switch {
+                        margin-left:auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* 개인정보수정 */
+.my-info-edit {
+    .my {
+        display:flex;
+        align-items:center;
+        margin-bottom:45px;
+        padding:35px 60px;
+        background:$disabled;
+        @include mobile {
+            padding:20px 16px;
+            margin-bottom:30px;
+        }
+        .my-photo {
+            position:relative;
+            margin-right:30px;
+            @include mobile {
+                margin-right:15px;
+            }
+            .thumb {
+                display:block;
+                width:130px;
+                min-width:130px;
+                height:130px;
+                border-radius:50%;
+                overflow:hidden;
+                @include mobile {
+                    width:80px;
+                    min-width:80px;
+                    height:80px;
+                }
+                img {
+                    width:100%;
+                    height:100%;
+                    object-fit:cover;
+                }
+            }
+            .btn-edit {
+                position:absolute;
+                bottom:0;
+                right:0;
+                width:30px;
+                height:30px;
+                border:1px solid $border;
+                border-radius:50%;
+                background:#fff url('/images/icon/icon-pic.gif') center no-repeat;
+            }
+        }
+        .info {
+            .name {
+                font-size:20px;
+                line-height:1.2;
+                font-weight:500;
+                @include mobile {
+                    font-size:18px;
+                }
+            }
+            .desc {
+                margin-top:5px;
+                color:#666;
+                @include font;
+            }
+        }
+    }
+}
+
+/* 회원탈퇴 */
+.secession-wrap {
+    > h3.title {
+        margin-bottom:40px;
+        font-size:30px;
+        font-weight:700;
+        @include mobile {
+            margin-bottom:20px;
+            font-size:24px;
+        }
+    }
+    .flex {
+        display:flex;
+        .box {
+            flex:1;
+            margin-left:20px;
+            padding:40px;
+            border:1px solid $border;
+            &:first-child {
+                margin-left:0;
+            }
+            .tit {
+                margin-bottom:30px;
+                font-size:24px;
+                font-weight:700;
+            }
+            ul.slt-rs {
+                > li {
+                    margin-top:15px;
+                    &:first-child {
+                        margin-top:0;
+                    }
+                }
+            }
+            .bullet-list {
+                margin-top:30px;
+                li {
+                    color:#aaa;
+                }
+            }
+        }
+    }
+}
+
+/* 약관 */
+.terms-cont {
+    padding-top:55px;
+    @include mobile {
+        padding-top:0;
+    }
+    > h3 {
+        margin-bottom:30px;
+        font-size:30px;
+        line-height:1.3;
+        font-weight:500;
+        @include mobile {
+            margin-bottom:20px;
+            font-size:20px;
+        }
+    }
+    h4.tit {
+        margin-bottom:30px;
+        @include font-md;
+        font-weight:700;
+        @include mobile {
+            margin-bottom:15px;
+        }
+    }
+    p {
+        margin-bottom:70px;
+        color:#666;
+        @include font-md;
+        @include mobile {
+            margin-bottom:40px;
+        }
+    }
+    > *:last-child {
+        margin-bottom:0;
+    }
+}

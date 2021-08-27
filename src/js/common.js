@@ -5,6 +5,7 @@ $(function () {
     accordion();
     uiDropdown();
     modalToggle();
+    $(this).find('.nice-select').niceSelect();
 });
 
 $(window).on('load', function(){

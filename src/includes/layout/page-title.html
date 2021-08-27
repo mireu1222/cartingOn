@@ -3,6 +3,8 @@
 @@if(context.cate03){<h2 class="page-title">이용안내</h2>}
 @@if(context.cate04){<h2 class="page-title">고객센터</h2>}
 @@if(context.mypage){<h2 class="page-title">마이페이지</h2>}
+@@if(context.terms==='01'){<h2 class="page-title">이용약관</h2>}
+@@if(context.terms==='02'){<h2 class="page-title">개인정보처리방침</h2>}
 <div class="page-tab-wrap">
     <div class="scroll">
         <ul class="tabs">
@@ -28,6 +30,10 @@
                 <li@@if(context.mypage === '03'){ class="active"}><a href="/page/member_mypage_03.html">개인정보수정</a></li>
                 <li@@if(context.mypage === '04'){ class="active"}><a href="/page/member_mypage_04.html">나의 결제내역</a></li>
                 <li@@if(context.mypage === '05'){ class="active"}><a href="/page/member_mypage_05.html">쿠폰관리</a></li>
+            }
+            @@if(context.terms){
+                <li@@if(context.terms === '01'){ class="active"}><a href="/page/terms01.html">이용약관</a></li>
+                <li@@if(context.terms === '02'){ class="active"}><a href="/page/terms02.html">개인정보처리방침</a></li>
             }
         </ul>
     </div>

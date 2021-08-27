@@ -32,8 +32,8 @@
                             </div>
                         </div>
                         <div class="right">
-                            <a href="" class="btn btn-point"><span>안전거래하기</span></a>
-                            <a href="" class="btn btn-point"><span>고용하기</span></a>
+                            <button type="button" class="btn btn-point" data-toggle="modal" data-target="#modal-info"><span>안전거래하기</span></button>
+                            <button type="button" class="btn btn-point" data-toggle="modal" data-target="#modal-employ"><span>고용하기</span></button>
                         </div>
                     </div>
                     <div class="body">
@@ -90,7 +90,7 @@
                                                     <p class="tit">카팅 알리미</p>
                                                     <p class="tit-desc">안전거래를 요청했어요.</p>
                                                     <p class="text">김영진(공간연출자)고수님에게 안전거래를 요청했어요.<br>서비스 마감일과 금액을 고수님에게 제안 받아보세요.</p>
-                                                    <a href="" class="btn btn-border-point"><span>안전거래 확인하기</span></a>
+                                                    <a href="/page/member_mypage_01_payon.html" class="btn btn-border-point"><span>안전거래 확인하기</span></a>
                                                 </div>
                                             </div>
                                             <p class="dt"><span class="blind">메시지 수신</span>오전 10:53</p>
@@ -177,6 +177,19 @@
         <!-- footer -->
         @@include('./layout/footer.html')
         <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html', {
+            id : 'modal-info',
+            button : '확인',
+            disabled : true
+        })
+        @@include('./layout/modal.html', {
+            id : 'modal-employ',
+            button2 : '고용하기',
+            disabled : true
+        })
+        <!-- modal -->
     </div>
 </body>
 </html>

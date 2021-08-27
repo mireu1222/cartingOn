@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    @@include('./layout/head.html')
+</head>
+<body>
+    <div class="skip-navigation">
+        <a href="#container">메뉴 건너뛰기</a>
+    </div>
+    <div id="wrap">
+        <!-- header -->
+        @@include('./layout/header.html', {
+            mypage : true
+        })
+        <!-- // header -->
+        
+        <!-- contents -->
+        <div id="container" class="container">
+            @@include('./layout/page-title.html', {
+                mypage : '01'
+            })
+            <div class="contents-area">
+                <div class="pay-info-view">
+                    <h3 class="title">안전거래 상세정보</h3>
+                    <div class="ptn">
+                        <span class="thumb"><img src="/images/img/img-review.jpg" alt=""></span>
+                        <div class="info">
+                            <p class="name">홍길동 (한국썬팅) 고수님</p>
+                            <p class="desc">욕실공사/방수</p>
+                        </div>
+                        <a href="" class="btn-chat"><span class="blind">고수와 채팅하기</span></a>
+                    </div>
+                    <ul class="pay-infos">
+                        <li>
+                            <p class="tit">서비스 금액</p>
+                            <p class="state">입력 대기</p>
+                        </li>
+                        <li>
+                            <p class="tit">할인금액</p>
+                            <p class="state">입력 대기</p>
+                        </li>
+                        <li>
+                            <p class="tit">안전거래 수수료</p>
+                            <p class="state">입력 대기</p>
+                        </li>
+                        <li>
+                            <p class="tit">최종 입금 금액</p>
+                            <p class="state text-point">입력 대기</p>
+                        </li>
+                        <li>
+                            <p class="tit">서비스 마감일</p>
+                            <p class="state">입력 대기</p>
+                        </li>
+                    </ul>
+                    <div class="deal-steps">
+                        <ol>
+                            <li class="active">
+                                <span class="num">1</span>
+                                <p>거래요청</p>
+                            </li>
+                            <li>
+                                <span class="num">2</span>
+                                <p>입금 확인중</p>
+                            </li>
+                            <li>
+                                <span class="num">3</span>
+                                <p>서비스 제공</p>
+                            </li>
+                            <li>
+                                <span class="num">4</span>
+                                <p>거래 확정</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="step-info">
+                        <div class="area">
+                            <p class="tit">안전거래를 요청했어요</p>
+                            <p class="desc">김영진 (공간연출자) 고수님에게 안전거래를 요청했어요.<br>서비스 마감일과 금액을 고수님에게 제안 받아보세요.</p>
+                            <button type="button" class="btn-cancel" data-toggle="modal" data-target="#modal-pay-cancel">취소하기</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- // contents -->
+
+        <!-- footer -->
+        @@include('./layout/footer.html')
+        <!-- // footer -->
+
+        <!-- modal -->
+        @@include('./layout/modal.html', {
+            id : 'modal-pay-cancel',
+            button2 : '확인'
+        })
+        <!-- // modal -->
+    </div>
+</body>
+</html>
